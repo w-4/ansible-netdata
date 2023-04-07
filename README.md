@@ -1,0 +1,1 @@
+A role based on https://github.com/netdata/community/tree/main/configuration-management/ansible-quickstart

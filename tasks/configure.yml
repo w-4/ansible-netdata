@@ -8,3 +8,14 @@
     mode: u=wrx,g=rx,o=r,+x
   notify: Restart Netdata
   become: true
+
+- name: config | Configuring Netdata Alarm Notifications
+  template:
+    src: ../templates/health_alarm_notify.conf.j2
+    dest: /etc/netdata/health_alarm_notify.conf
+    owner: root
+    group: root
+    mode:  u=wrx,g=rx,o=r,+x
+  notify: Restart Netdata
+  become: true
+  when: netdata_alarm_configure
